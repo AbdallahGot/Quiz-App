@@ -24,7 +24,7 @@ const quizData = [
     b:"16",
     c:"14",
     d:"11",
-    answer:"c"      
+    answer:"d"      
     },
     {
     question:"Who won the 1998 Football World Cup Final?",
@@ -161,7 +161,7 @@ next.addEventListener('click', () => {
            quiz.innerHTML = `
            <h2>Your Score :${score}/10</h2>
            <h2>leader bord:</h2>
-           <h3> top score : ${localStorage.key(largestt)} : ${largestt}/10</h3>
+           <h3> top score : ${localStorage.key(largesttIndex)} : ${largestt}/10</h3>
            <a href="index.html"><button id="finish">finish</button></a>
            `
            
@@ -181,15 +181,16 @@ var values=[]
             values.push( localStorage.getItem(keys[i]) );
         }
         console.log(values)
-        return values;
+        return values.reverse();
     }
-
+    var largesttIndex=0;
     var largestt= 0;
 function largest(valuess){
     
 for (i=0; i<=valuess.length;i++){
     if (valuess[i]>largestt) {
-        var largestt=valuess[i];
+        largestt=valuess[i];
+        largesttIndex=i;
     }
 }
 return largestt;
