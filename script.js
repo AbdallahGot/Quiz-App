@@ -163,6 +163,7 @@ next.addEventListener('click', () => {
            <h2>leader bord:</h2>
            <h3> top score : ${localStorage.key(largesttIndex)} : ${largestt}/10</h3>
            <a href="index.html"><button id="finish">finish</button></a>
+           <video>
            `
            
        }
@@ -188,7 +189,7 @@ var values=[]
 function largest(valuess){
     
 for (i=0; i<=valuess.length;i++){
-    if (valuess[i]>largestt) {
+    if (valuess[i]>=largestt) {
         largestt=valuess[i];
         largesttIndex=i;
     }
